@@ -3,6 +3,8 @@ import { UpdateInvoice, DeleteInvoice } from '@/app/ui/invoices/buttons';
 import InvoiceStatus from '@/app/ui/invoices/status';
 import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredInvoices } from '@/app/lib/data';
+import { useState, useEffect } from 'react';
+
 
 export default async function InvoicesTable({
   query,
@@ -86,13 +88,13 @@ export default async function InvoicesTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
                       <Image
-                      alt='img'
-                        src={invoice.image_url}
-                        className="rounded-full"
-                        width={28}
-                        height={28}
-                      
+                        src="/hero-desktop.png" 
+                        width={1000} 
+                        height={760}
+                        className="hidden md:block"
+                        alt={`Screenshots of the dashboard project for ${invoice.name}`}
                       />
+
                       <p>{invoice.name}</p>
                     </div>
                   </td>
